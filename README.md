@@ -51,7 +51,7 @@ cp .env.example .env
 
 Edit with your settings:
 
-# .env
+#### .env
 REDIS_URL=redis://localhost:6379/0
 
 ### 3. Install Dependencies
