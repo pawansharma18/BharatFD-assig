@@ -46,8 +46,10 @@ cd faq-management-system
 
 ### 2. Configure Environment
 
-Create .env/.cfg from template:
+Create .env from template:
 
+
+cp .env.example .env
 
 Edit with your settings:
 
@@ -103,7 +105,7 @@ curl "http://localhost:8000/api/faqs/?lang=es"
 
 Response:
 
-
+```json
 {
   "count": 3,
   "next": null,
@@ -116,7 +118,7 @@ Response:
     }
   ]
 }
-
+```
 
 ### 7. Testing
 
@@ -145,6 +147,7 @@ docker-compose exec web python manage.py migrate
         username:
         email:
         password:
+
 
 docker-compose exec web python manage.py createsuperuser
 
