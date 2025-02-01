@@ -46,10 +46,8 @@ cd faq-management-system
 
 ### 2. Configure Environment
 
-Create .env from template:
+Create .env/.cfg from template:
 
-
-cp .env.example .env
 
 Edit with your settings:
 
@@ -144,12 +142,13 @@ docker-compose up --build
 docker-compose exec web python manage.py migrate
 
     Create admin user:
-
-
+        username:
+        email:
+        password:
 
 docker-compose exec web python manage.py createsuperuser
 
-Access at http://localhost:8000
+Access at http://localhost:8000/admin
 
 ![alt text](image.png)
 ![alt text](image-1.png)
