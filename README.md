@@ -39,14 +39,15 @@ This backend application allows users to manage frequently asked questions (FAQs
 
 ### 1. Clone Project
 
-```bash
+
 git clone https://github.com/yourusername/faq-management-system.git
 cd faq-management-system
+
 
 ### 2. Configure Environment
 
 Create .env from template:
-```bash
+
 
 cp .env.example .env
 
@@ -55,30 +56,30 @@ Edit with your settings:
 # .env
 REDIS_URL=redis://localhost:6379/0
 
-3. Install Dependencies
-```bash
+### 3. Install Dependencies
+
 python -m venv projenv
 projenv\Scripts\activate
 pip install -r requirements.txt
 
-4. Database Setup
-```bash
+### 4. Database Setup
+
 python manage.py migrate
 python manage.py createsuperuser
 
-5. Run Services
+### 5. Run Services
 
 Start Redis (separate terminal):
-```bash
+
 redis-server
 
 Start Django server:
-```bash
+
 
 python manage.py runserver
 
 
-API Documentation
+### 6. API Documentation
 Get FAQs
 
 API Endpoints
@@ -98,12 +99,12 @@ Parameters:
     lang (optional): 2-letter language code (default: en)
 
 Example Request:
-```bash
+
 
 curl "http://localhost:8000/api/faqs/?lang=es"
 
 Response:
-```json
+
 
 {
   "count": 3,
@@ -118,46 +119,37 @@ Response:
   ]
 }
 
-Data Model
 
-class FAQ(models.Model):
-    base_question = models.CharField(max_length=255)
-    base_answer = RichTextField()
-    language = models.CharField(max_length=2, default='en')
-    translated_question = models.CharField(max_length=255, blank=True)
-    translated_answer = RichTextField(blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-Testing
+### 7. Testing
 
 Run all tests:
-```bash
+
 pytest tests/ --verbosity=2
 
 Test coverage:
-```bash
+
 
 coverage run -m pytest tests/
 coverage report
 
-Deployment with Docker
+### 8.Deployment with Docker
 
     Build and start containers:
 
-```bash
+
 docker-compose up --build
 
     Apply migrations:
-
-```bash
 
 docker-compose exec web python manage.py migrate
 
     Create admin user:
 
-```bash
+
 
 docker-compose exec web python manage.py createsuperuser
 
 Access at http://localhost:8000
+
+![alt text](image.png)
+![alt text](image-1.png)
