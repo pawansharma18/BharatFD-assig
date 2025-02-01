@@ -40,9 +40,7 @@ This backend application allows users to manage frequently asked questions (FAQs
 ### 1. Clone Project
 
 
-git clone https://github.com/yourusername/faq-management-system.git
-cd faq-management-system
-
+git clone https://github.com/pawansharma18/BharatFD-assig.git
 
 ### 2. Configure Environment
 
