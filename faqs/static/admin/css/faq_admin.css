@@ -1,0 +1,4 @@
+.ck-content {
+    color: black !important;  /* Ensure text appears black */
+    background-color: white !important;  /* Ensure background stays white */
+}
